@@ -51,12 +51,12 @@ class App extends React.Component {
     this.fetchImages(this.state.searchInput, this.state.page);
   }
 
-  handleChange = (e) => {
+  changeHandler = (e) => {
     const value = e.target.value;
     this.setState({ searchInput: value });
   };
 
-  handleSubmit = (e) => {
+  submitHandler = (e) => {
     e.preventDefault();
     this.setState({ page: 1 });
     this.fetchImages(this.state.searchInput, this.state.page);
@@ -97,8 +97,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <Searchbar
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
+          changeHandler={this.changeHandler}
+          submitHandler={this.submitHandler}
         />
 
         {this.state.isLoaded === true ? (

@@ -2,10 +2,10 @@ import React from "react";
 import styles from "./Searchbar.module.css";
 import PropTypes from "prop-types";
 
-const Searchbar = ({ handleChange, handleSubmit }) => {
+const Searchbar = ({ changeHandler, submitHandler }) => {
   return (
     <header className={styles.Searchbar}>
-      <form onSubmit={handleSubmit} className={styles.SearchForm}>
+      <form onSubmit={submitHandler} className={styles.SearchForm}>
         <button type="submit" className={styles.SearchFormButton}>
           <span className={styles.SearchFormButtonLabel}>Search</span>
         </button>
@@ -16,7 +16,7 @@ const Searchbar = ({ handleChange, handleSubmit }) => {
           autoComplete="off"
           autoFocus
           placeholder="Search images and photos"
-          onChange={handleChange}
+          onChange={changeHandler}
         />
       </form>
     </header>
@@ -26,6 +26,6 @@ const Searchbar = ({ handleChange, handleSubmit }) => {
 export default Searchbar;
 
 Searchbar.propTypes = {
-  handleChange: PropTypes.func,
-  handleSubmit: PropTypes.func,
+  changeHandler: PropTypes.func,
+  submitHandler: PropTypes.func,
 };
